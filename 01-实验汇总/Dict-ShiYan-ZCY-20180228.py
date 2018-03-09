@@ -50,6 +50,7 @@ DiFang = {
     }
 }
 
+
 l1 = False
 l2 = False
 l3 = False
@@ -57,19 +58,37 @@ l3 = False
 while l1 == False:
     for A in DiFang.keys():
         print(A)
-    AI = input("请输入您想要去的城市(输入Q退出程序)：")
+    AI = input("请输入要去的城市(输入Q退出程序)：")
+    if AI == "Q":
+        sys.exit(0)
+    for Z in DiFang.keys():
+        if AI in Z:
+            break
+    else:
+        print("请输入正确的城市名！")
+        continue
     while l2 == False:
         for B in DiFang[AI].keys():
             print(B)
-        BI = input("请输入您想要去的区(输入Q退出程序，输入0返回上一层): ")
+        BI = input("请输入要去的区(输入Q退出程序，输入B返回上一层): ")
+        if BI == "Q":
+            sys.exit(0)
+        if BI == "B":
+            break
+        for C in DiFang[AI].keys():
+            if BI in C:
+                break
+        else:
+            print("请输入正确的区名！")
+            continue
         while l3 == False:
             for C in DiFang[AI][BI].keys():
                 print(C)
-            CI = input("返回上一层请输入0，退出程序输入Q： ")
+            CI = input("输入B返回上一层，输入Q退出程序.")
             if CI == "Q":
                 sys.exit(0)
-            elif CI == 0:
+            if CI == "B":
                 break
-                l3 = True
-        break
-
+            else:
+                print("请输入正确的操作符（B返回，Q退出）")
+                continue
