@@ -1,3 +1,0 @@
-zhangsan 123456
-lisi 456789
-wangwu 789123
