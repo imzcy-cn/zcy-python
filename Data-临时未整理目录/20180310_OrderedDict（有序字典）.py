@@ -23,7 +23,7 @@
 
 
 
-
+#！！！有序字典实现的方法
 #  Dict字典是无序的，但是列表是有序的；可以把列表的元素定义为Dict字典的keys，循环显示列表即能拿到有序的字典values
 def ZCY_Dict():
     dic = {'z':'zhangsan','l':'lisi','w':'wangwu'}
