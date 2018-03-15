@@ -1,7 +1,20 @@
+'''
+1、 对于[数字]和[字符串]而言，赋值、浅拷贝和深拷贝无意义，因为其永远指向同一个内存地址
+2、 对于字典、元祖、列表而言，进行赋值、浅拷贝和深拷贝时，其内存地址的变化是不同的。
 
+
+赋值： 只是创建一个变量，该变量指向原来内存地址
+浅拷贝：在内存中只额外创建第一层数据
+深拷贝：在内存中将所有的数据重新创建一份（排除最后一层，即：python内部对字符串和数字的优化）
+
+
+'''
 
 #首先导入copy模块
 import copy
+
+
+
 
 
 
@@ -27,50 +40,28 @@ def ZCY_FuZhi():
 
 
 
-dic = {
-    "CPU":'80',
-    "Mem":'80',
-    "Disk":["aa",'bb']
-}
 
 
-print('原始字典= ',dic)
-print('原始字典ID= ',id(dic))
-print('原始字典的Disk的ID= ',id(dic['Disk']))
+def ZCY_Copy():
+    A = {'K1':'V1','K2':'V2','K3':[11,22,33]}
+    B = copy.copy(A)
+    C = copy.deepcopy(A)
 
-'''
-NewDic = copy.copy(dic)
-NewDic['Disk'][0] = 50
+    print('为原始数据字典A的ID= ',id(A))
+    print('使用浅拷贝字典B的ID= ',id(B))
+    print('使用深拷贝字典C的ID= ',id(C))
 
-print(NewDic)
-print('NewDic字典的Disk的ID= ',id(NewDic['Disk']))
-print(dic)
-print('原始Dic字典的Disk的ID= ',id(dic['Disk']))                  #浅拷贝原始字典的Disk键值的ID和NewDic的Disk键值的ID相同
-                                                                 #浅拷贝只拷贝第一层，所以有多层元素，，修改新字典包含多层元素的键，因为是相同ID，所以等于原始数据也被修改了
+    print()
+    print('字典A的K3的ID= ',id(A['K3']))
+    print('字典B的K3的ID= ',id(B['K3']))
+    print('字典C的K3的ID= ', id(C['K3']))
 
-D:\1_zcy_data\0_zcy_python\1_python_MianAnZhuangJieShiChengXu\python-3.6.3-embed-amd64\python.exe D:/1_zcy_data/0_zcy_python/0_pycharm_data/zcy-python/Data-临时未整理目录/test.py
-原始字典=  {'CPU': '80', 'Mem': '80', 'Disk': ['aa', 'bb']}
-原始字典ID=  2173788089008
-原始字典的Disk的ID=  2173788698888
-{'CPU': '80', 'Mem': '80', 'Disk': [50, 'bb']}
-NewDic字典的Disk的ID=  2173788698888
-{'CPU': '80', 'Mem': '80', 'Disk': [50, 'bb']}
-原始Dic字典的Disk的ID=  2173788698888
-'''
+    print()
+    print('可以看出使用浅拷贝复制的字典B和原始字典A的K3的ID是一样的，所以如果修改了字典B的K3的元素，等于修改了ID一样的A的K3对应的元素；；所以如果有多层数据拷贝的需求，要使用深拷贝copy.deepcopy()')
 
-
-
-
-NewDic = copy.deepcopy(dic)
-NewDic['Disk'][0] = 50
-
-
-print('NewDic的值为= ',NewDic)
-print('NewDic的Disk元素的ID= ',id(NewDic['Disk']))
-
-print('原始Dic字典的值为= ',dic)
-print('原始字典的Disk的ID为= ',id(dic['Disk']))                    #深拷贝原始Disk和NewDic的ID不相同
-
-
-
+    print()
+    print('字典A的K1的ID= ',id(A['K1']))
+    print('字典C的K1的ID= ',id(C['K1']))
+    C.
+ZCY_Copy()
 
