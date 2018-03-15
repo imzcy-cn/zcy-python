@@ -59,9 +59,5 @@ def ZCY_Copy():
     print()
     print('可以看出使用浅拷贝复制的字典B和原始字典A的K3的ID是一样的，所以如果修改了字典B的K3的元素，等于修改了ID一样的A的K3对应的元素；；所以如果有多层数据拷贝的需求，要使用深拷贝copy.deepcopy()')
 
-    print()
-    print('字典A的K1的ID= ',id(A['K1']))
-    print('字典C的K1的ID= ',id(C['K1']))
-    C.
 ZCY_Copy()
 
