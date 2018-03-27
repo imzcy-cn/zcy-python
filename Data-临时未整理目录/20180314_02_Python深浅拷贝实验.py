@@ -25,7 +25,7 @@ print('原始Dic字典的Disk的ID= ',id(dic['Disk']))                  #浅拷�
 
 
 
-D:\1_zcy_data\0_zcy_python\1_python_MianAnZhuangJieShiChengXu\python-3.6.3-embed-amd64\python.exe D:/1_zcy_data/0_zcy_python/0_pycharm_data/zcy-python/Data-临时未整理目录/test.py
+D:\1_zcy_data\0_zcy_python\1_python_MianAnZhuangJieShiChengXu\python-3.6.3-embed-amd64\python.exe D:/1_zcy_data/0_zcy_python/0_pycharm_data/zcy-python/Data-临时未整理目录/查询HA文件.py
 原始字典=  {'CPU': '80', 'Mem': '80', 'Disk': ['aa', 'bb']}
 原始字典ID=  2173788089008
 原始字典的Disk的ID=  2173788698888
