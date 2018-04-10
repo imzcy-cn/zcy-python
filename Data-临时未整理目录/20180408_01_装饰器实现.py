@@ -33,8 +33,8 @@ tv("zhangcy")
 '''理解
 1、先把login函数加载到内存中
 2、@login相当于把tv函数作为login函数的参数来运行一遍login函数（相当于执行tv = login(tv)）。
-    3、login函数里面，此时tv函数就赋值给了func参数，把inner函数加载到内存中，然后return返回inner函数的内存地址(执行结束login函数这时tv就指向了inner函数的内存地址)
-4、运行函数tv("zhangcy"),相当于执行了：
+    3、login函数里面，此时tv函数就赋值给了func参数，把inner函数加载到内存中，然后return返回inner函数的内存地址(执行结束login函数这时因为@login相当于tv = login(tv)，，此时新的tv就指向了inner函数的内存地址)
+4、运行函数tv("zhangcy"),相当于执行了被替换后的inner函数：
      def inner(arg):            其中inner被tv替换，arg被zhangcy替换
         print("验证身份")
         func(arg)                func等于之前的tv函数，并且给其复制arg（值为zhangcy）
