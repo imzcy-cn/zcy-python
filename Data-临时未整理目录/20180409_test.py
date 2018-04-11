@@ -40,9 +40,10 @@ tv("zhangcy")
     #3、执行login(func)函数，此时func等于tv的内存地址
     #4、定义函数inner(arg)，返回inner函数的内存地址给到tv函数
 #5、执行tv("zhangcy")函数，相当于执行
-         '''def inner(arg):     
-        print("验证身份")
-        func(arg)
+         '''
+        def inner(arg):     
+            print("验证身份")
+            func(arg)
         '''
          #此时arg等于"zhangcy"，接着打印验证身份，接着执行函数func(arg)，func为之前的tv，arg为zhangcy
          # def tv(name):
